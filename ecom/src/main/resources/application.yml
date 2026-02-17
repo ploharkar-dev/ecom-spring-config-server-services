@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ecom
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      profile: dev
+      label: main
+      name: ecom-backend-fullstop-service
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    root: INFO
+    com.prl.ecom: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
